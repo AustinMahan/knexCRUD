@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+{% block css %} <link rel="stylesheet" href="/css/index.css"> {% endblock %}
+{% block content %}
+
+  <div class="row">
+    <form class="loginForm col-md-4" action="/login" method="post">
+      <label for="username">Username</label>
+      <input type="text" name="username" class="form-control">
+
+      <label for="password">Passsword</label>
+      <input type="password" name="password" class="form-control">
+      <button type="submit">Log In</button>
+    </form>
+  </div>
+
+{% endblock %}

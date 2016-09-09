@@ -1,0 +1,34 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+  <div class="row">
+    {% for author in data %}
+    <div class="oneBook">
+      <img src="{{author.portrait_url}}" class="img" onclick="location.href = '/authors/{{author.id}}'"}/>
+      <h2>{{author.first_name}}</h2>
+      Books: <ol>
+        {% for book in author.books %} <li>{{book.title}}</li> {% endfor %}
+      </ol>
+      <p>
+        {{author.biography}}
+      </p>
+    {% if loggedIn %}
+    <div class="logInBtns">
+      <form class="deleteAuthor">
+        <input type="number" name="id" value="{{author.id}}" hidden>
+        <button type="submit" class="delet btn btn-danger"> Delete</button>
+      </form>
+      <form class="editAuthor">
+        <input type="number" name="id" value="{{author.id}}" hidden>
+        <button type="submit" class="edit btn btn-warning"> Edit</button>
+      </form>
+    </div>
+    {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

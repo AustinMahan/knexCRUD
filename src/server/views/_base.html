@@ -9,17 +9,54 @@
     {% if title %}
       <title>{{ title }}</title>
     {% else %}
-      <title>Something. Something. Something.</title>
+      <title>Galvanize Reads</title>
     {% endif %}
     <!-- stylesheets -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/header.css">
     {% block css %}{% endblock %}
   </head>
   <body>
+    <div class="container">
+      <header class="row">
+        <img src="https://cdn.evbuc.com/eventlogos/65503631/galvanizegalvanizelogotextlogo28129.png" alt="" />
+        <h1>Galvanize Reads</h1>
+        {% if bks %}
+        <div class="headerBks headerBox" style="background-color:grey" onclick="location.href = '/books'">
+          <p>Books</p>
+        </div>
+        <div class="headerAuth headerBox" onclick="location.href = '/authors'">
+          <p>Authors</p>
+        </div>
+        {% endif %}
+        {% if auth %}
+        <div class="headerBks headerBox" onclick="location.href = '/books'">
+          <p>Books</p>
+        </div>
+        <div class="headerAuth headerBox" style="background-color:grey" onclick="location.href = '/authors'">
+          <p>Authors</p>
+        </div>
+        {% endif %}
+        {% if not loggedIn %}
+        <a href="/login" class="login"> Log In/Register </a>
+        {% else %}
+        <div class="login">
+            <div class="btn-group dropDown">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Options <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <!-- Dropdown menu links -->
+              <li><a href="/authors/new">Add Author</a></li>
+              <li><a href="/books/new">Add Book</a></li>
+            </ul>
+          </div>
+        </div>
+        {% endif %}
+      </header>
       {% block content %}
       {% endblock %}
+    </div>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>

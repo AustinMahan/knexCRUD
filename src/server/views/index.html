@@ -1,12 +1,16 @@
 {% extends "_base.html" %}
 
 {% block title %}{% endblock %}
-
+{% block css %} <link rel="stylesheet" href="/css/index.css"> {% endblock %}
 {% block content %}
 
-  <div class="container">
-    <h1>{{title}}</h1>
-    <h2>The sum is {{sum}}</h2>
+  <div class="row">
+    <div class="authors" onclick="location.href = '/authors'">
+      Authors
+    </div>
+    <div class="books" onclick="location.href = '/books'">
+      books
+    </div>
   </div>
 
 {% endblock %}

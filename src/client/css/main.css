@@ -6,3 +6,46 @@ body {
 a {
   color: #00B7FF;
 }
+
+.oneBook{
+  height: 200px;
+  width: 80vw;
+  margin: 50px;
+  position: relative;
+}
+
+img{
+  margin-right: 20px;
+}
+
+li, ol{
+  margin-left: 100px;
+}
+
+.img{
+  float: left;
+  height: 100%;
+}
+
+.img:hover{
+  cursor: pointer;
+}
+
+.loginForm{
+  position: relative;;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logInBtns{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.editBook, .editAuthor{
+  float: right;
+}
+.deleteBook, .deleteAuthor{
+  float: right;
+}

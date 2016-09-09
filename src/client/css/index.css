@@ -1,0 +1,19 @@
+.authors{
+  height: 40vw;
+  width: 40vw;
+  background-color: lime;
+}
+
+.books{
+  height: 40vw;
+  width: 40vw;
+  background-color: red;
+}
+
+.authors:hover{
+  cursor: pointer;
+}
+
+.books:hover{
+  cursor: pointer;
+}

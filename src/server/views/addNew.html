@@ -1,0 +1,46 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+{% block css %} <link rel="stylesheet" href="/css/index.css"> {% endblock %}
+{% block content %}
+
+  <div class="row col-md-4">
+    {% if auhtor %}
+    <form class="authorForm" action="/authors/new" method="post" id="authorForm">
+      <label for="first_name">First Name</label>
+      <input type="text" class="form-control" name="first_name">
+
+      <label for="last_name">Last Name</label>
+      <input type="text" class="form-control" name="last_name">
+
+      <label for="portrait_url">Portrait URL</label>
+      <input type="url" class="form-control" name="portrait_url">
+    </form>
+    <label for="biography">Biography</label>
+    <textarea class="" name="biography" rows="8" cols="40" form="authorForm"></textarea>
+    <button type="submit" form="authorForm">Add</button>
+    {% endif %}
+    {% if book %}
+    <form class="bookForm" action="/books/new" method="post" id="bookForm">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title">
+
+      <label for="genre">Genre</label>
+      <input type="text" class="form-control" name="genre">
+
+      <label for="cover_url">Cover URL</label>
+      <input type="url" class="form-control" name="cover_url">
+
+      <label for="authorFirst">Author's First Name</label>
+      <input type="text" name="authorFirst" class="form-control">
+
+      <label for="authorLast">Author's Last Name</label>
+      <input type="text" name="authorLast" class="form-control">
+    </form>
+    <label for="description">Description</label>
+    <textarea class="" name="description" rows="8" cols="40" form="bookForm"></textarea>
+    <button type="submit" form="bookForm">Add</button>
+    {% endif %}
+  </div>
+
+{% endblock %}

@@ -6,11 +6,15 @@
 
     // *** routes *** //
     const routes = require('../routes/index');
-    const albums = require('../routes/albums')
+    const books = require('../routes/books')
+    const author = require('../routes/author')
+    const login = require('../routes/login')
 
     // *** register routes *** //
     app.use('/', routes);
-    app.use('/albums', albums)
+    app.use('/authors', author)
+    app.use('/books', books)
+    app.use('/login', login)
 
   };
 

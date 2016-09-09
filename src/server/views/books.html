@@ -1,0 +1,33 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+  <div class="row">
+    {% for book in data %}
+    <div class="oneBook">
+      <img src="{{book.cover_url}}" class="img" onclick="location.href = '/books/{{book.id}}'"/>
+      <h2>{{book.title}}</h2>
+      <h3>By: {{book.authors}}</h3>
+      <h3>Genre: {{book.genre}}</h3>
+      <p>
+        {{book.description}}
+      </p>
+      {% if loggedIn %}
+      <div class="logInBtns">
+        <form class="deleteBook">
+          <input type="number" name="id" value="{{book.id}}" hidden>
+          <button type="submit" class="delet btn btn-danger"> Delete</button>
+        </form>
+        <form class="editBook">
+          <input type="number" name="id" value="{{book.id}}" hidden>
+          <button type="submit" class="edit btn btn-warning"> Edit</button>
+        </form>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}
